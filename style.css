@@ -1,3 +1,5 @@
+/* Page Styles */
+
 body{
     display: flex;
     justify-content: center;
@@ -8,6 +10,8 @@ body{
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
 }
+
+/* Question Container Styles */
 
 .quizz-container {
     display: flex;
@@ -26,11 +30,27 @@ body{
     padding: 2rem;
 }
 
+/* Next Button Styles */
+
+#next-btn,
+#restart-btn {
+    margin-top: 1rem;
+}
+
+#next-btn {
+    font-size: 1.1rem;
+    padding: 1.75rem 2rem;
+}
+
+/* Question Styles */
+
 #question {
     text-align: center;
     margin-bottom: 0;
     margin-top: 1rem;
 }
+
+/* Answer Options Styles */
 
 #answer-buttons {
     display: flex;
@@ -40,19 +60,25 @@ body{
     margin-bottom: 1rem;
 }
 
+/* Radio + Label Alignment */
+
 .input-group {
     display:flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* Inputs Base Styles */
+
 input{
     width: fit-content;
 }
 
+/* Button Base Styles */
+
 .btn{
     padding:1.5rem;
-    background-color: blue;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -63,12 +89,10 @@ input, .btn{
 }
 
 .btn:hover{
-    background-color: darkblue;
+    opacity: 0.9;
 }
 
-.hide{
-    display: none;
-}
+/* Result Styles */
 
 #result{
     margin: 2rem auto;
@@ -78,4 +102,175 @@ input, .btn{
 #result{
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+/* Chat Bubble Styles */
+.chat-bubble {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.chat-bubble span {
+    font-size: 1.8rem;
+}
+
+/* Chat Window Styles */
+.chat-window {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    width: 22rem;
+    height: 28rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* Chat Header Styles */
+
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn:hover {
+    opacity: 0.8;
+}
+
+/* Chat Messages Styles */
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.assistant-message {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    align-self: flex-end;
+}
+
+/* Chat Input Styles */
+
+.chat-input-container {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    gap: 0.5rem;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 1.5rem;
+    outline: none;
+    font-size: 0.9rem;
+    width: auto;
+}
+
+#chat-input:focus {
+    border-color: #667eea;
+}
+
+#send-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+#send-btn:hover {
+    opacity: 0.9;
+}
+
+/* Utility */
+
+.hide{
+    display: none;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 600px) {
+    .chat-window {
+        width: calc(100vw - 2rem);
+        right: 1rem;
+        bottom: 7rem;
+    }
+
+    .chat-bubble {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
 }
